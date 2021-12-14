@@ -1,0 +1,40 @@
+/* nav bar - parent */
+nav {
+  height: 120px;
+  width: 100%;
+  padding: 1.5em;
+  position: fixed; /* set navbar to fixed position */
+  top: 0;
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+.navcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* whole nav to set font */
+nav > span {
+  font-size: 20px;
+}
+
+/* tweeter logo */
+.logo {
+  display: flex;
+  align-items: flex-end;
+  font-size: 40px;
+  font-family: "Bungee", cursive;
+}
+
+/* right side nav bar */
+.rightnav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* double arrows */
+.fa-solid.fa-angles-down {
+  color: red;
+}

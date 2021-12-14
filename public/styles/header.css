@@ -1,0 +1,15 @@
+/* header */
+.profile-header {
+  display: flex;
+  width: 100%;
+  height: auto;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F2A94C;
+  background-image: url(../images/bright-squares.png);
+}
+
+/* move avatar position */
+img {
+  margin-top: 150px;
+}
