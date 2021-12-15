@@ -1,0 +1,54 @@
+.current-tweets {
+  margin-top: 20px;
+}
+
+.tweet {
+  border: 3px solid #a5a5a5;
+}
+
+.tweet-header {
+  margin: 5px;
+  height: 40px;
+  line-height: 40px;
+  font-size: large;
+}
+
+.tweet-header .tweet-header-name {
+  float: left;
+}
+
+.tweet-header .tweet-header-handle {
+  float: right;
+  font-weight: 200;
+  color: #4056a1;
+  opacity: 0.7;
+}
+
+.tweet-body {
+  margin: 5px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.tweet-footer {
+  border-top: 3px solid #a5a5a5;
+  padding: 10px;
+  margin: 5px;
+  height: 40px;
+}
+
+.tweet-time {
+  font-size: 1rem;
+  float: left;
+}
+
+.tweet-actions {
+  font-size: 1rem;
+  float: right;
+  color: #4056a1;
+}
+
+.tweet-actions .fas:hover {
+  color: #dbce17;
+  cursor: pointer;
+}
