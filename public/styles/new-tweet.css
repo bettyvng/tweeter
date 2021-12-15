@@ -1,0 +1,36 @@
+.new-tweet form {
+  width: 100%;
+  margin: auto;
+}
+
+.new-tweet form label {
+  width: 100%;
+  display: block;
+  margin: 10px auto;
+  padding: 0 0 10px 0;
+  border-bottom: 2px solid #a5a5a5;
+}
+
+#tweet-text {
+  width: 100%;
+  min-height: 50px;
+  border-color: #a5a5a5;
+  background-color: #f4f1ec;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.new-tweet-action button {
+  font-family: "Bungee", cursive;
+  font-size: 20px;
+  color: white;
+  background-color: #4056a1;
+  border: none;
+  border-radius: 1px;
+}
+
+.new-tweet-action .counter {
+  float: right;
+  font-family: "Bungee", cursive;
+  line-height: 30px;
+}

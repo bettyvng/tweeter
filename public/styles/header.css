@@ -2,11 +2,12 @@
 .profile-header {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 520px;
   flex-direction: column;
   align-items: center;
   background-color: #F2A94C;
   background-image: url(../images/bright-squares.png);
+  font-size: 1.5em;
 }
 
 /* move avatar position */
