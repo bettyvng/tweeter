@@ -34,3 +34,7 @@
   font-family: "Bungee", cursive;
   line-height: 30px;
 }
+
+.counter-negative {
+  color: red;
+}
