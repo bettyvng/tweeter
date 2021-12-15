@@ -6,6 +6,10 @@
   border: 3px solid #a5a5a5;
 }
 
+.tweet:not(:first-child) {
+  margin-top: 20px;
+}
+
 .tweet-header {
   margin: 5px;
   height: 40px;
@@ -15,6 +19,13 @@
 
 .tweet-header .tweet-header-name {
   float: left;
+}
+
+.tweet-header .tweet-header-name img {
+  width: 23px;
+  height: 23px;
+  margin: 0;
+  vertical-align: text-top;
 }
 
 .tweet-header .tweet-header-handle {
