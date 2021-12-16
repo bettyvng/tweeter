@@ -8,6 +8,6 @@ $(document).ready(function() {
     } else {
       jCounter.removeClass("counter-negative");
     }
-    jCounter.html(counter);
+    jCounter.text(counter);
   })
 });

@@ -1,3 +1,13 @@
+/**
+ * Escape function to help prevent xss
+ * @param {*} str - string to be rendered/escaped
+ * @returns xss-safe string
+ */
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 /**
  * 
@@ -16,7 +26,7 @@ const createTweetElement = function(tweet) {
         <div class="tweet-header-handle">${tweet.user.handle}</div>
       </header>
       <div class="tweet-body">
-        <span class="tweet-body-text">${tweet.content.text}</span>
+        <span class="tweet-body-text">${escape(tweet.content.text)}</span>
       </div>
       <footer class="tweet-footer">
         <div class="tweet-time">${timeago.format(tweet.created_at)}</div>
@@ -67,7 +77,7 @@ const resetNewTweetArea = function() {
   // reset the text counter
   const jCounter = $(".counter");
   jCounter.removeClass("counter-negative");
-  jCounter.html(140);
+  jCounter.text(140);
 }
 
 /**
