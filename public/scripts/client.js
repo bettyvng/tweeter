@@ -74,6 +74,14 @@ const initAddTweetHandler = function() {
   $( "#new-tweet-form" ).submit(function( event ) {
     event.preventDefault();
     const tweetText = $('#tweet-text').val();
+    if (!tweetText || tweetText.length <= 0) {
+      alert("Sorry! please write something before submission.");
+      return;
+    }
+    if (tweetText.length > 140) {
+      alert("Sorry! Your message exceeds maximum character limit at 140.");
+      return;
+    }
     // Grab the value in textarea and submit tweet message.
     $.post("http://localhost:8080/tweets", { text: tweetText }, function(result) {
       resetNewTweetArea();
