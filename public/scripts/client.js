@@ -72,6 +72,7 @@ const loadTweets = function() {
  * Reset new tweet area; empty textarea and reset tweet counter
  */
 const resetNewTweetArea = function() {
+  // Reset error on new tweet area if any
   // reset textarea input value
   $('#tweet-text').val('');
   // reset the text counter
@@ -80,6 +81,21 @@ const resetNewTweetArea = function() {
   jCounter.text(140);
 }
 
+const toggleNewTweetError = function(message) {
+  if (message) {
+    // add text message
+    $('.new-tweet-error-body').text(message);
+    // revealing the message
+    $('.new-tweet-error').slideDown("fast", "linear");
+  } else {
+    // hide the message, after it's done, then reset the error message
+    // using callback to make text disappear only after it is
+    // completely hidden
+    $('.new-tweet-error').slideUp("fast", "linear", () => {
+      $('.new-tweet-error-body').text('');
+    });
+  }
+}
 /**
  * Initialize add-tweet handler so that it can post on submit
  */
@@ -89,13 +105,15 @@ const initAddTweetHandler = function() {
     event.preventDefault();
     const tweetText = $('#tweet-text').val();
     if (!tweetText || tweetText.length <= 0) {
-      alert("Sorry! please write something before submission.");
+      toggleNewTweetError("Sorry! please write something before submission.");
       return;
     }
     if (tweetText.length > 140) {
-      alert("Sorry! Your message exceeds maximum character limit at 140.");
+      toggleNewTweetError("Sorry! Your message exceeds maximum character limit at 140.");
       return;
     }
+    // Reset error
+    toggleNewTweetError('');
     // Grab the value in textarea and submit tweet message.
     $.post("http://localhost:8080/tweets", { text: tweetText }, function() {
       // reset new tweet area

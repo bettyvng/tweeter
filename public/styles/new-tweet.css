@@ -11,6 +11,14 @@
   border-bottom: 3px solid #a5a5a5;
 }
 
+.new-tweet-error {
+  display: none;
+  font-size: 18px;
+  color: red;
+  border: 3px solid red;
+  padding: 5px;
+}
+
 #tweet-text {
   width: 100%;
   min-height: 50px;
