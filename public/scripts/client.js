@@ -36,6 +36,8 @@ const createTweetElement = function(tweet) {
  * @param {*} tweets - a list of tweets to be rendered
  */
 const renderTweets = function(tweets) {
+  // Empty existing tweets first.
+  $('.current-tweets').empty();
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -50,6 +52,8 @@ const renderTweets = function(tweets) {
 const loadTweets = function() {
   // Load tweets from server
   $.get("http://localhost:8080/tweets", function(result) {
+    // Show latest on top so user see latest first
+    result.sort((a, b) => b.created_at - a.created_at);
     renderTweets(result);
   });
 }
@@ -83,8 +87,11 @@ const initAddTweetHandler = function() {
       return;
     }
     // Grab the value in textarea and submit tweet message.
-    $.post("http://localhost:8080/tweets", { text: tweetText }, function(result) {
+    $.post("http://localhost:8080/tweets", { text: tweetText }, function() {
+      // reset new tweet area
       resetNewTweetArea();
+      // load tweets again
+      loadTweets();
     });
   });
 }
