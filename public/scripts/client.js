@@ -28,17 +28,6 @@ const data = [
   }
 ]
 
-const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  $(document).ready(function() {
-    tweets.forEach(tweet => {
-      $('.current-tweets').append(createTweetElement(tweet));
-    });
-  });
-}
-
 const createTweetElement = function(tweet) {
   const $tweetElementMarkup = `
     <article class="tweet">
@@ -65,4 +54,43 @@ const createTweetElement = function(tweet) {
   return $tweetElementMarkup;
 }
 
-renderTweets(data);
+const renderTweets = function(tweets) {
+  // loops through tweets
+  // calls createTweetElement for each tweet
+  // takes return value and appends it to the tweets container
+  tweets.forEach(tweet => {
+    $('.current-tweets').append(createTweetElement(tweet));
+  });
+}
+
+const resetNewTweetArea = function() {
+  // reset textarea input value
+  $('#tweet-text').val('');
+  // reset the text counter
+  const jCounter = $(".counter");
+  jCounter.removeClass("counter-negative");
+  jCounter.html(140);
+}
+
+const initAddTweetHandler = function() {
+  // Listen to tweet form submission
+  $( "#new-tweet-form" ).submit(function( event ) {
+    event.preventDefault();
+    const tweetText = $('#tweet-text').val();
+    // Grab the value in textarea and submit tweet message.
+    $.post("http://localhost:8080/tweets", { text: tweetText }, function(result) {
+      resetNewTweetArea();
+    });
+  });
+}
+
+const bootstrap = function() {
+  // Wait for document to be ready
+  $(document).ready(function() {
+    renderTweets(data);
+    initAddTweetHandler();
+  });
+}
+
+// Initial call to wait for document ready and start all the work
+bootstrap();
