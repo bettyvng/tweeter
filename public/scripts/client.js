@@ -105,7 +105,7 @@ const initAddTweetHandler = function() {
     event.preventDefault();
     const tweetText = $('#tweet-text').val();
     if (!tweetText || tweetText.length <= 0) {
-      toggleNewTweetError("Sorry! please write something before submission.");
+      toggleNewTweetError("Sorry! Please write something before submission.");
       return;
     }
     if (tweetText.length > 140) {
