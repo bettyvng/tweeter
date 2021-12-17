@@ -6,6 +6,10 @@
   border: 3px solid #a5a5a5;
 }
 
+.tweet:hover {
+  box-shadow: 5px 5px rgb(64 86 161 / 30%);
+}
+
 .tweet:not(:first-child) {
   margin-top: 20px;
 }
