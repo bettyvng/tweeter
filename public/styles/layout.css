@@ -19,16 +19,41 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: Source Sans Pro, sans-serif;
+  min-width: 425px;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+/* From > 786px place avatar and tweets in row format */
+.flexible-content {
+  display: flex;
+  flex-direction: row;
+}
+
 /* main form for tweets */
 .container {
   justify-content: center;
   width: 90%;
   background-color: #f4f1ec;
-  margin: 50px auto;
+  margin: 140px auto;
+  padding-right: 40px;
+}
+
+
+/* Tablet breakpoint is maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #dea863;
+    position: absolute;
+  }
+  .container {
+    margin-top: 20px;
+    padding-right: 0px;
+  }
+  .flexible-content {
+    display: flex;
+    flex-direction: column;
+  }
 }

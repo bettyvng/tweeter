@@ -33,45 +33,45 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav class = "navcontainer">
-      <span class = "logo">tweeter</span>
-      <div class = "rightnav">
-        <span class = "write"><b>Write</b> a new tweet</span>
-        <i class = "fa-solid fa-angles-down"></i>
+    <nav class="navcontainer">
+      <span class="logo">tweeter</span>
+      <div class="rightnav">
+        <span class="write"><b>Write</b> a new tweet</span>
+        <i class="fa-solid fa-angles-down"></i>
       </div>
     </nav>
 
-    <!-- Header for avatar -->
-    <header class = "profile-header">
-      <div>
-          <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class = "avatar name">
-          <div><b>Peppa</b> Pig</div>
-      </div>
-    </header>
-
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div class="new-tweet-error">
-          <i class="fas fa-thin fa-triangle-exclamation"></i>
-          <span class="new-tweet-error-body"></span>
-          <i class="fas fa-thin fa-triangle-exclamation"></i>
+    <div class="flexible-content">
+      <!-- Header for avatar -->
+      <header class="profile-header">
+        <div class="profile-img-container">
+            <img src="/images/profile-hex.png"> 
         </div>
-        <form id="new-tweet-form" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="new-tweet-action">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <div class="avatar name">
+            <div><b>Peppa</b> Pig</div>
+        </div>
+      </header>
+
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <div class="new-tweet-error">
+            <i class="fas fa-thin fa-triangle-exclamation"></i>
+            <span class="new-tweet-error-body"></span>
+            <i class="fas fa-thin fa-triangle-exclamation"></i>
           </div>
-        </form>
-      </section>
-      <section class="current-tweets">
-      </section>
-    </main>
+          <form id="new-tweet-form" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="new-tweet-action">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="current-tweets">
+        </section>
+      </main>
+    </div>
   </body>
 </html>

@@ -12,6 +12,7 @@ nav {
 .navcontainer {
   display: flex;
   justify-content: space-between;
+  min-width: 425px;
 }
 
 /* whole nav to set font */
@@ -37,4 +38,14 @@ nav > span {
 /* double arrows */
 .fa-solid.fa-angles-down {
   color: red;
+}
+
+/* Tablet breakpoint is maximum width of 768px */
+@media only screen and (max-width: 768px) {
+  nav {
+    background-color: #dea863;
+    position: absolute;
+    padding: 18px;
+    height: 90px;
+  }
 }
